@@ -7,6 +7,7 @@ import { NotesEditor } from './components/NotesEditor'
 import { createNote, loadNotes, updateNote } from './redux-with-helpers/actions/notes'
 import { Button } from '@react95/core'
 import React from 'react'
+import { SpecialButton } from './redux-with-helpers/SpecialButton'
 
 export function installReduxNotesAppWithHelpers() {
   const ReduxProvider = installReduxWithHelpers({ notes: new FakeNotesService() })
@@ -40,6 +41,7 @@ function ReduxNotes() {
       />
       <br />
       <Button onClick={() => dispatch(loadNotes())}>load</Button>
+      <SpecialButton />
     </div>
   )
 }
